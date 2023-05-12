@@ -15,7 +15,7 @@
 #X obj 211 458 *~;
 #X obj 277 358 line~;
 #X obj 277 382 abs~;
-#X obj 276 410 *~ -1;
+#X obj 276 406 *~ -1;
 #X obj 275 434 +~ 1;
 #X obj 320 459 *~;
 #X obj 386 359 line~;
@@ -37,7 +37,7 @@
 #X text 359 161 speed;
 #X text 546 373 creates back and forth movement;
 #X text 547 395 between 0 and 1;
-#X obj 299 126 hsl 128 30 0 2000 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#X obj 414 126 hsl 128 30 0 2000 0 0 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 0 1;
 #X obj 444 194 / 2;
 #X obj 327 205 / 4;
@@ -46,7 +46,7 @@
 #X obj 831 8 vsl 50 128 0 0.1 0 0 empty empty empty 0 -9 0 10 #fc8000
 #000000 #000000 0 1;
 #X text -82 233 www.pd-tutorial.com;
-#X obj 87 323 *~ 0.2;
+#X obj 87 326 *~ 0.2;
 #X obj 969 631 +~;
 #X obj 968 583 +~;
 #X obj 968 608 +~;
@@ -151,7 +151,7 @@
 2014;
 #X floatatom 647 158 5 0 0 0 - - - 0;
 #X obj 647 176 osc~ \$1;
-#X obj 650 124 hsl 128 30 0 2218 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#X obj 581 114 hsl 128 30 0 2218 0 0 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 0 1;
 #X obj 657 212 *~;
 #X msg 154 334 -1 \, 1 \$1;
@@ -198,25 +198,37 @@
 #X text 250 162 ON;
 #X floatatom 831 165 5 0 0 0 - - - 0;
 #X text 296 108 controlador manual;
-#X text 652 103 controlador manual;
+#X text 653 91 controlador manual;
 #X text 837 143 controlador manual;
 #X obj -79 651 writesf~ 4;
 #X msg -205 526 open v2.wav;
 #X text 6 196 Johannes Kreidler;
-#X msg 106 29 stop;
-#X floatatom 169 -114 5 0 0 0 - - - 0;
-#X text 217 -115 entorno 305000 msec;
-#X msg 154 -56 open 00.wav \, 1;
-#X msg 165 -30 open 01.wav \, 1;
-#X obj 170 -158 metro 10000;
-#X obj 169 -136 random 4;
-#X obj 169 -89 sel 0 1 2 3;
-#X obj 149 55 readsf~ 4;
-#X obj 157 111 *~ 0.5;
-#X msg 171 -2 open 02.wav \, 1;
-#X msg 180 24 open 03.wav \, 1;
-#X obj 172 -196 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X msg -28 -47 stop;
+#X floatatom 48 -262 5 0 0 0 - - - 0;
+#X text 96 -263 entorno 305000 msec;
+#X msg 33 -204 open 00.wav \, 1;
+#X msg 44 -178 open 01.wav \, 1;
+#X obj 48 -284 random 4;
+#X obj 48 -237 sel 0 1 2 3;
+#X obj 15 -21 readsf~ 4;
+#X obj 23 35 *~ 0.5;
+#X msg 50 -150 open 02.wav \, 1;
+#X msg 59 -124 open 03.wav \, 1;
+#X obj 50 -332 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
+#X obj 49 -306 metro 1e+09;
+#X obj 630 -59 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 581 29 5 0 0 0 - - - 0;
+#X text 629 28 entorno 305000 msec;
+#X obj 582 -15 metro 1000;
+#X floatatom 704 -3 5 0 0 0 - - - 0;
+#X text 752 -4 entorno 305000 msec;
+#X obj 704 -25 random 2228;
+#X obj 666 48 hsl 128 30 0 2218 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 735 -87 metro 750;
+#X obj 582 7 random 200;
 #X connect 0 0 2 0;
 #X connect 0 0 148 0;
 #X connect 0 0 148 1;
@@ -284,6 +296,8 @@
 #X connect 43 0 11 0;
 #X connect 43 0 16 1;
 #X connect 43 0 21 0;
+#X connect 43 0 24 0;
+#X connect 43 0 14 0;
 #X connect 44 0 48 0;
 #X connect 45 0 46 0;
 #X connect 46 0 44 0;
@@ -389,28 +403,37 @@
 #X connect 138 0 148 0;
 #X connect 139 0 148 0;
 #X connect 149 0 148 0;
-#X connect 151 0 159 0;
-#X connect 152 0 158 0;
-#X connect 154 0 159 0;
-#X connect 155 0 159 0;
-#X connect 156 0 157 0;
-#X connect 157 0 152 0;
-#X connect 158 0 154 0;
-#X connect 158 1 155 0;
-#X connect 158 2 161 0;
-#X connect 158 3 162 0;
-#X connect 159 0 160 0;
-#X connect 159 1 160 0;
-#X connect 159 2 160 0;
-#X connect 159 3 160 0;
-#X connect 159 4 160 1;
-#X connect 160 0 0 0;
-#X connect 160 0 11 0;
-#X connect 160 0 16 0;
-#X connect 160 0 21 0;
-#X connect 161 0 159 0;
-#X connect 162 0 159 0;
+#X connect 151 0 158 0;
+#X connect 152 0 157 0;
+#X connect 154 0 158 0;
+#X connect 155 0 158 0;
+#X connect 156 0 152 0;
+#X connect 157 0 154 0;
+#X connect 157 1 155 0;
+#X connect 157 2 160 0;
+#X connect 157 3 161 0;
+#X connect 158 0 159 0;
+#X connect 158 1 159 0;
+#X connect 158 2 159 0;
+#X connect 158 3 159 0;
+#X connect 158 4 159 1;
+#X connect 159 0 0 0;
+#X connect 159 0 11 0;
+#X connect 159 0 16 0;
+#X connect 159 0 21 0;
+#X connect 160 0 158 0;
+#X connect 161 0 158 0;
+#X connect 162 0 163 0;
 #X connect 163 0 156 0;
+#X connect 164 0 167 0;
+#X connect 164 0 172 0;
+#X connect 165 0 100 0;
+#X connect 167 0 173 0;
+#X connect 168 0 171 0;
+#X connect 170 0 168 0;
+#X connect 171 0 98 0;
+#X connect 172 0 170 0;
+#X connect 173 0 165 0;
 #X restore 22 44 pd disco de acrecion;
 #N canvas 52 52 450 300 META 0;
 #X restore 20 14 pd META;
